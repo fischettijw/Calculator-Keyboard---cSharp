@@ -183,7 +183,6 @@ namespace Calculator_Keyboard___cSharp
                     break;
             }
         }
-
     }
 
 }
