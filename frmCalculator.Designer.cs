@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculator));
             this.btnBackspace = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtOperation = new System.Windows.Forms.TextBox();
@@ -351,8 +352,12 @@
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "frmCalculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "C# Keypad Calculator  by Joseph Fischetti";
             this.Load += new System.EventHandler(this.FrmCalculator_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCalculator_KeyDown);

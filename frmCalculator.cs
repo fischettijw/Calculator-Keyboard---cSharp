@@ -19,9 +19,10 @@ namespace Calculator_Keyboard___cSharp
 
         private void FrmCalculator_Load(object sender, EventArgs e)
         {
-            txtDisplay.Text = "0";
-            txtMemory.Text = "";
-            txtOperation.Text = "";
+            //txtDisplay.Text = "0";
+            //txtMemory.Text = "";
+            //txtOperation.Text = "";
+            btnClear.PerformClick();
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace Calculator_Keyboard___cSharp
             }
             else
             {
-                txtDisplay.Text += ".";
+                if (txtDisplay.Text.Contains(".") == false) txtDisplay.Text += ".";
             }
         }
 
@@ -63,8 +64,8 @@ namespace Calculator_Keyboard___cSharp
             string mathOp = btn.Text;
             if (txtOperation.Text == "")
             {
-                txtOperation.Text = mathOp;
                 txtMemory.Text = txtDisplay.Text;
+                txtOperation.Text = mathOp;
                 txtDisplay.Text = "0";
             }
             else
@@ -84,9 +85,11 @@ namespace Calculator_Keyboard___cSharp
                         txtMemory.Text = Convert.ToString(double.Parse(txtMemory.Text) / double.Parse(txtDisplay.Text));
                         break;
                 }
-                txtOperation.Text = btn.Text;
+                txtOperation.Text = mathOp;// btn.Text;
                 txtDisplay.Text = "0";
             }
+            //txtOperation.Text = mathOp;
+            //txtDisplay.Text = "0";
         }
 
         private void btnBackspace_Click(object sender, EventArgs e)
